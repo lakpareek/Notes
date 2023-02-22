@@ -1,0 +1,77 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node *left;
+    Node *right;
+    
+    Node(int d){
+        this -> data = d;
+        this -> left = NULL;
+        this -> right = NULL;
+    }
+    
+};
+
+Node* BuildTree(Node* root){
+    cout<< "Enter yo data" << endl;
+    int data;
+    cin >> data;
+    root = new Node(data);
+    
+    if(data == -1){
+        return NULL;
+    }
+    
+    cout<<"enter data on left of "<< data << endl;
+    root -> left = BuildTree(root -> left);
+    
+    cout<<"enter data on right of "<< data << endl;
+    root -> right = BuildTree(root -> right);
+}
+
+void LevelOrderTraversal(Node* root){
+    queue<node*> q;
+    q.push(root);
+
+    while(!q.empty()){
+        node* temp = q.front;
+        q.pop();
+        if(temp == NULL){
+            cout<<endl;
+            if(q.empty()){
+                q.push(NULL);
+
+            }
+        }
+        else{
+            cout<<temp->data<<" ";
+            if(temp -> left){
+                q.push(temp->left)
+            }
+            f(temp -> right){
+                q.push(temp->right)
+            }
+
+        }
+    }
+}
+
+void LNR(Node* Root){
+    if(root == NULL){
+        return ;
+    }
+    
+    
+}
+
+
+int main() {
+    Node* root = NULL;
+    root = BuildTree(root);
+
+    return 0;
+}
