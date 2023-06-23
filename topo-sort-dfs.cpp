@@ -27,7 +27,7 @@ void topologicalSort(vector<vector<int>> &edges, int v, int e){
     stack<int>s;
     for(int i = 0; i<v; i++){
         if(!visited[i]){
-            topoSort(i);
+            topoSort(i, visited, s, adj);
         }
     }
     vector<int> ans;
